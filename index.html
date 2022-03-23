@@ -7,21 +7,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            ;
+        }
+        
+        .container {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #332A83;
+            padding: 0;
+            margin: 0;
+        }
+        
         .heading {
             font-family: 'Helvetica', 'Arial', sans-serif;
-            background-color: black;
+            background-color: white;
             text-align: center;
-            color: white;
+            color: black;
+            margin-left 400px;
             font-size: 2em;
+            width: 50%;
+            margin: auto;
         }
         
         .metric-one {
             font-family: 'Helvetica', 'Arial', sans-serif;
-            background-color: #332A83;
             color: white;
             font-size: 5em;
             text-align: center;
             padding-bottom: 50px;
+        }
+        
+        .date {
+            color: white;
         }
     </style>
 
@@ -29,15 +50,17 @@
 </head>
 
 <body>
-    <div class="heading">
-        <h1>Rebalance Health™</h1>
-    </div>
-    <div class="flexbox main-container">
+    <div class="container">
+        <div class="heading">
+            <h1>Rebalance Health™</h1>
+        </div>
+        <div class="flexbox main-container">
 
-        <div class="metric-one">Emails</div>
-        <div class="metric-one" id="first">first one</div>
-        <div class="date" id="date">00:00:00</div>
+            <div class="metric-one">Emails</div>
+            <div class="metric-one" id="first">first one</div>
+            <div class="date" id="date">00:00:00</div>
 
+        </div>
     </div>
     <script>
         //List or Segment
