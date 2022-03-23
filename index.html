@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: black;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+        }
+        
+        .metric-one {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background-color: #332A83;
+            color: white;
+            font-size: 5em;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Rebalance Health™</h1>
+    </div>
+    <div class="flexbox main-container">
+
+        <div class="metric-one">Emails</div>
+        <div class="metric-one" id="first">first one</div>
+        <div class="date" id="date">00:00:00</div>
+
+    </div>
+    <script>
+        //List or Segment
+        function getEmails() {
+            fetch("//localhost:3000").then((x) => {
+                x.json().then((x) => {
+                    let objectOne = document.getElementById("first");
+                    let date = document.getElementById("date");
+                    objectOne.innerText = x;
+                    date.innerText = new Date();
+                })
+            });
+        }
+        getEmails();
+        //chron job
+        const freqMinutes = 1,
+            interval = freqMinutes * 60 * 1000;
+        setInterval(function() {
+            //List or Segment
+            getEmails();
+
+        }, interval);
+    </script>
+
+</body>
+
+</html>
